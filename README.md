@@ -1,0 +1,1 @@
+Browser based calculator developed using HTML, CSS and JavaScript.
