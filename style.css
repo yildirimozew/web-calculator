@@ -2,12 +2,16 @@ body{
     margin:0px;
     background-color:black;
 }
+@font-face{
+    font-family: calculator;
+    src: url("digital-7.ttf");
+}
 #main-div{
     margin:auto;
     height:100vh;
     max-width:700px;
     width:100%;
-    background-color:#90a4ae;
+    background-color:#fff9c4;
     color:#000000;
     display:flex;
     flex-wrap:wrap;
@@ -17,7 +21,7 @@ body{
     margin:2%;
     width:96%;
     height:35%;
-    background-color:#c1d5e0;
+    background-color:#fffff7;
     border-radius:15px;
     box-shadow: 3px 4px 6px 0px #62757f inset;
 }
@@ -25,7 +29,7 @@ body{
     width:96%;
     margin:2%;
     height:60%;
-    background-color:#62757f;
+    background-color:#cbc693;
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
@@ -34,7 +38,44 @@ body{
 }
 .button{
     width:15%;
-    margin:1.2%;
     height:16%;
-    background-color:black;
+    margin:1.8% 3%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: calculator;
+    font-size:86px;
+    border-radius:15px;
 }
+
+.button:hover{
+    animation-name:button-hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes button-hover {
+    100% {background-color: #fff9c4;
+        /* search for this opacity:0.5;*/}
+}
+
+.important{
+    color:#B00020;
+}
+
+.equals:hover{
+    animation-name:equals-hover;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes equals-hover {
+    100% {background-color:#B00020;
+    color:#ffffff}
+}
+
+.operator, .equals{
+    color:rgba(49, 27, 146, 0.7);
+}
+
+.equation{}
