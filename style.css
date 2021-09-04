@@ -55,8 +55,7 @@ body{
 }
 
 @keyframes button-hover {
-    100% {background-color: #fff9c4;
-        /* search for this opacity:0.5;*/}
+    100% {background-color: #fff9c4;}
 }
 
 .important{
@@ -78,4 +77,32 @@ body{
     color:rgba(49, 27, 146, 0.7);
 }
 
-.equation{}
+.operator:hover, .equals:hover{
+    color:rgba(49, 27, 146, 1);
+}
+
+#equation{
+    width:98%;
+    height:30%;
+    border:black solid 1px;
+    border-radius:15px;
+    direction: rtl;
+    font-family: calculator;
+    font-size:30px;
+}
+
+#answer{
+    max-width:98%;
+    width:98%;
+    height:53%;
+    border-radius:15px;
+    margin-top:4%;
+    display:flex;
+    flex-wrap:wrap;
+    align-items: flex-end;
+    word-wrap: break-word;
+    direction:rtl;
+    font-family: calculator;
+    font-size:80px;
+}
+
