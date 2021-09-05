@@ -82,13 +82,15 @@ body{
 }
 
 #equation{
+    margin:15px 15px 15px 0px;
     width:98%;
     height:30%;
-    border:black solid 1px;
     border-radius:15px;
-    direction: rtl;
+    display:flex;
+    justify-content:flex-end;
     font-family: calculator;
-    font-size:30px;
+    font-size:70px;
+    color:rgba(0,0,255,0.7);
 }
 
 #answer{
@@ -96,13 +98,14 @@ body{
     width:98%;
     height:53%;
     border-radius:15px;
-    margin-top:4%;
+    position:relative;
+    bottom: 10px;
     display:flex;
     flex-wrap:wrap;
     align-items: flex-end;
     word-wrap: break-word;
-    direction:rtl;
+    justify-content: flex-end;
     font-family: calculator;
-    font-size:80px;
+    font-size:120px;
 }
 
