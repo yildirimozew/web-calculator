@@ -7,20 +7,17 @@ const topContainer = document.getElementById("equation");
 const bottomContainer = document.getElementById("answer");
 
 function num(number) {
-    console.log(floatcheck)
     if (floatcheck === 1) {}
     else if (numcode === 1)
     {num1 += number;
-        console.log(num1);
     drawScreen();}
     else {num2 += number;
     drawScreen()}
-
 }
 
 function op(operation) {
     floatcheck = 0;
-    if (num1 === "") {}
+    if (num1 === "") {console.log(num1)}
     else if (opcode === "") {opcode = operation;
         numcode = 2;
         drawScreen();}
@@ -32,6 +29,8 @@ function op(operation) {
 }
 
 function drawScreen() {
+    if (num1.toString().length > 10) {num1 = num1.toString().slice(0, 11)}
+    if (num2.toString().length > 10) {num2 = num2.toString().slice(0, 11)}
     if(num1 % 1 !== 0 && num1 !== "" && numcode === 1) {num1 = parseFloat(num1).toFixed(2);
     floatcheck = 1;}
     else {floatcheck = 0;}
@@ -57,12 +56,14 @@ function equals() {
     else if (opcode === "-") {sub()}
     else if (opcode === "*") {multiply()}
     else if (opcode === "/") {divide()}
+    else if (opcode === "%") {mod()}
 }
 
 function ac() {
     num1 = "";
     num2 = "";
     opcode = "";
+    numcode = 1;
     drawScreen();
 }
 
@@ -83,12 +84,54 @@ function multiply() {
 }
 
 function divide() {
+    if (parseFloat(num2) !== 0) {
     num1 = parseFloat(num1) / parseFloat(num2);
     num2 = "";
     numcode = 1;
     opcode = "";
     drawScreen();
 }
+    else {}
+}
 
-//TODO: num'un gereğinden fazla büyük olmamasını sağla
-//TODO:işlemleri tek bir fonksyionda topla opcode'u kullanarak yaptır
+function mod() {
+    num1 = parseFloat(num1) % parseFloat(num2);
+    num2 = "";
+    numcode = 1;
+    opcode = "";
+    drawScreen();
+}
+
+function c() {
+    if (numcode === 1) {
+        if (floatcheck === 1) {num1 = num1.toString().slice(0, -3);
+            drawScreen()}
+        else {num1 = num1.toString().slice(0, -1);
+    drawScreen()}}
+    else {
+        if (floatcheck === 1) {num1 = num1.toString().slice(0, -3);
+            drawScreen();}
+        else{
+        num2 = num2.toString().slice(0, -1);
+    drawScreen();}}
+}
+
+function plusminus() {
+    if (numcode === 1 && num1 !== "") {
+        num1 = -1 * parseFloat(num1);
+        drawScreen()}
+    else if (num2 !== "") {num2 = -1 * parseFloat(num2);
+        drawScreen()}
+    }
+
+function dot() {
+    if (numcode === 1 && num1 !== "") {
+        if (num1.toString().includes(".")) {}
+        else {num1 = num1.toString() + ".";
+    drawScreen()}}
+    else if (num2 !== "") {
+        if (num2.toString().includes(".")) {}
+        else {num2 = num2.toString() + ".";
+    drawScreen()}
+    }
+}

@@ -1,11 +1,17 @@
 body{
     margin:0px;
     background-color:black;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
+
 @font-face{
     font-family: calculator;
     src: url("digital-7.ttf");
 }
+
 #main-div{
     margin:auto;
     height:100vh;
@@ -17,6 +23,7 @@ body{
     flex-wrap:wrap;
     border-radius:20px;
 }
+
 #screen{
     margin:2%;
     width:96%;
@@ -25,6 +32,7 @@ body{
     border-radius:15px;
     box-shadow: 3px 4px 6px 0px #62757f inset;
 }
+
 #button-container{
     width:96%;
     margin:2%;
@@ -36,6 +44,7 @@ body{
     align-items:center;
     border-radius:10px;
 }
+
 .button{
     width:15%;
     height:16%;
