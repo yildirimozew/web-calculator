@@ -118,3 +118,25 @@ body{
     font-size:120px;
 }
 
+#credit-container {
+    color:#ffffff;
+    position:absolute;
+    bottom:0px;
+}
+
+#git-png{
+    height:55px;
+}
+
+#name{
+    display: inline;
+    margin:5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    color:white;
+}
