@@ -17,7 +17,7 @@ function num(number) {
 
 function op(operation) {
     floatcheck = 0;
-    if (num1 === "") {console.log(num1)}
+    if (num1 === "") {}
     else if (opcode === "") {opcode = operation;
         numcode = 2;
         drawScreen();}
@@ -29,11 +29,13 @@ function op(operation) {
 }
 
 function drawScreen() {
-    if (num1.toString().length > 10) {num1 = num1.toString().slice(0, 11)}
-    if (num2.toString().length > 10) {num2 = num2.toString().slice(0, 11)}
     if(num1 % 1 !== 0 && num1 !== "" && numcode === 1) {num1 = parseFloat(num1).toFixed(2);
     floatcheck = 1;}
     else {floatcheck = 0;}
+    if (num1.toString().length > 10) {num1 = num1.toString().slice(0, 11);
+        if (num1[1] === "." ) {num1 = num1.replace(".", "");}}
+    if (num2.toString().length > 10) {num2 = num2.toString().slice(0, 11);
+    if (num2[1] === "." ) {num2 = num2.replace(".", "")}}
     if (numcode === 2) {
         topContainer.innerHTML = num1 + " " + opcode;
         bottomContainer.innerHTML = num2;}
