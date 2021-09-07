@@ -97,7 +97,8 @@ function divide() {
 }
 
 function mod() {
-    num1 = parseFloat(num1) % parseFloat(num2);
+    if (num2 !== "0"){
+    num1 = parseFloat(num1) % parseFloat(num2);}
     num2 = "";
     numcode = 1;
     opcode = "";
